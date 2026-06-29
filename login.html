@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Корочки.есть</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="логотип">
+        Корочки.есть
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html">Войти</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+          <li class="nav-item"><a class="nav-link" href="requests.html">Мои заявки</a></li>
+          <li class="nav-item"><a class="nav-link" href="new-request.html">Новая заявка</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+  <div class="container">
+    <div class="card auth-card">
+      <div class="card-body p-4">
+        <h2 class="mb-3 text-center">Вход в систему</h2>
+
+        <div class="alert alert-danger d-none" id="loginError"></div>
+
+        <form id="loginForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="loginInput" class="form-label">Логин</label>
+            <input type="text" class="form-control" id="loginInput" required>
+            <div class="invalid-feedback">Введите логин</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="passwordInput" required>
+            <div class="invalid-feedback">Введите пароль</div>
+          </div>
+
+          <button type="submit" class="btn btn-main w-100">Войти</button>
+
+          <p class="text-center mt-3 mb-0">
+            Еще не зарегистрированы? <a href="register.html">Регистрация</a>
+          </p>
+
+          <p class="text-center text-muted mt-2 mb-0" style="font-size: 0.9rem;">
+            Тестовый доступ: логин <strong>user123</strong>, пароль <strong>123456</strong>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span>&copy; 2026 Корочки.есть</span>
+      <a href="admin.html">Вход для администратора</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
