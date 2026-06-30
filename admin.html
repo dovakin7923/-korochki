@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель администратора — Корочки.есть</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="логотип">
+        Корочки.есть
+      </a>
+    </div>
+  </nav>
+
+  <main class="page-main">
+
+  <div class="container py-4">
+
+    <div id="adminLoginBlock">
+      <div class="card auth-card">
+        <div class="card-body p-4">
+          <h2 class="mb-3 text-center">Вход администратора</h2>
+
+          <div class="alert alert-danger d-none" id="adminLoginError"></div>
+
+          <form id="adminLoginForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="adminLoginInput" class="form-label">Логин</label>
+              <input type="text" class="form-control" id="adminLoginInput" required>
+              <div class="invalid-feedback">Введите логин администратора</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="adminPasswordInput" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="adminPasswordInput" required>
+              <div class="invalid-feedback">Введите пароль администратора</div>
+            </div>
+
+            <button type="submit" class="btn btn-main w-100">Войти</button>
+
+            <p class="text-center text-muted mt-3 mb-0" style="font-size: 0.9rem;">
+              Доступ: логин <strong>Admin</strong>, пароль <strong>KorokNET</strong>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="adminPanelBlock" class="d-none">
+      <h2 class="mb-4">Все заявки пользователей</h2>
+
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle bg-white">
+          <thead class="table-light">
+            <tr>
+              <th>Пользователь</th>
+              <th>Курс</th>
+              <th>Дата начала</th>
+              <th>Оплата</th>
+              <th>Статус</th>
+              <th>Изменить статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user123</td>
+              <td>Веб-программирование на Python</td>
+              <td>01.08.2026</td>
+              <td>Наличными</td>
+              <td><span class="badge status-new" id="badge1">Новая</span></td>
+              <td>
+                <select class="form-select form-select-sm status-select" data-badge-target="badge1">
+                  <option value="new" selected>Новая</option>
+                  <option value="progress">Идёт обучение</option>
+                  <option value="done">Обучение завершено</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>user123</td>
+              <td>Управление проектами</td>
+              <td>15.07.2026</td>
+              <td>Перевод по телефону</td>
+              <td><span class="badge status-progress" id="badge2">Идёт обучение</span></td>
+              <td>
+                <select class="form-select form-select-sm status-select" data-badge-target="badge2">
+                  <option value="new">Новая</option>
+                  <option value="progress" selected>Идёт обучение</option>
+                  <option value="done">Обучение завершено</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>user123</td>
+              <td>Графический дизайн для начинающих</td>
+              <td>10.06.2026</td>
+              <td>Наличными</td>
+              <td><span class="badge status-done" id="badge3">Обучение завершено</span></td>
+              <td>
+                <select class="form-select form-select-sm status-select" data-badge-target="badge3">
+                  <option value="new">Новая</option>
+                  <option value="progress">Идёт обучение</option>
+                  <option value="done" selected>Обучение завершено</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span>&copy; 2026 Корочки.есть</span>
+      <a href="index.html">На главную</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

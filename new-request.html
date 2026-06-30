@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новая заявка — Корочки.есть</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="логотип">
+        Корочки.есть
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Войти</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+          <li class="nav-item"><a class="nav-link" href="requests.html">Мои заявки</a></li>
+          <li class="nav-item"><a class="nav-link active" href="new-request.html">Новая заявка</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+
+  <div class="container py-4">
+    <div class="card auth-card" style="max-width: 560px;">
+      <div class="card-body p-4">
+        <h2 class="mb-3 text-center">Заявка на обучение</h2>
+
+        <div class="alert alert-success d-none" id="requestSuccess">
+          Заявка отправлена! Мы свяжемся с вами для уточнения деталей.
+        </div>
+
+        <form id="newRequestForm" class="needs-validation" novalidate>
+
+          <div class="mb-3">
+            <label for="courseInput" class="form-label">Наименование курса</label>
+            <input type="text" class="form-control" id="courseInput"
+                   placeholder="Например: Веб-программирование на Python" required>
+            <div class="invalid-feedback">Укажите название курса</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="dateInput" class="form-label">Желаемая дата начала обучения</label>
+            <input type="text" class="form-control" id="dateInput"
+                   placeholder="ДД.ММ.ГГГГ"
+                   pattern="^\d{2}\.\d{2}\.\d{4}$" required>
+            <div class="form-text">Формат: ДД.ММ.ГГГГ</div>
+            <div class="invalid-feedback">Введите дату в формате ДД.ММ.ГГГГ</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label d-block">Способ оплаты</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="payMethod" id="payCash" value="cash" checked>
+              <label class="form-check-label" for="payCash">Наличными</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="payMethod" id="payTransfer" value="transfer">
+              <label class="form-check-label" for="payTransfer">Переводом по номеру телефона</label>
+            </div>
+          </div>
+
+          <div class="mb-3 d-none" id="phoneBlock">
+            <label for="payPhoneInput" class="form-label">Номер телефона для перевода</label>
+            <input type="text" class="form-control" id="payPhoneInput"
+                   placeholder="8(XXX)XXX-XX-XX"
+                   pattern="^8\(\d{3}\)\d{3}-\d{2}-\d{2}$">
+            <div class="invalid-feedback">Телефон должен быть в формате 8(XXX)XXX-XX-XX</div>
+          </div>
+
+          <button type="submit" class="btn btn-main w-100">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span>&copy; 2026 Корочки.есть</span>
+      <a href="admin.html">Вход для администратора</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
